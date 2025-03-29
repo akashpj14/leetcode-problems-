@@ -1,0 +1,17 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        lis=[]
+        brackets={"}":"{","]":"[",")":"("}
+        openbrackets=["(","[","{"]
+        for x in s:
+            if x in openbrackets:
+                lis.append(x)
+            elif lis and lis[-1]== brackets[x]:
+                lis.pop()
+            else:
+                return False
+        if lis:
+            return False
+        else:
+            return True        
+        
