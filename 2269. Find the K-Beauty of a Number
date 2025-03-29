@@ -1,0 +1,17 @@
+class Solution:
+    def divisorSubstrings(self, num: int, k: int) -> int:
+        o=list(str(num))
+        i=0
+        j=k-1
+        c=0
+        for n in range(len(o)-k+1):
+            k=o[i:j+1]
+            print(k)
+            try:
+                if num%int("".join(k))==0:
+                    c+=1
+            except:
+                pass
+            i+=1
+            j+=1    
+        return c                
