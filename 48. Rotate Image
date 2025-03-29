@@ -1,0 +1,17 @@
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        j=matrix[::-1]
+        ko=matrix[:]
+        lp=[[] for j in range(len(matrix))]
+        p=0
+        f=0
+        for h in range(len(matrix)):
+            for g in range(len(matrix)):
+                lp[h].append(j[p][f])
+                p+=1
+            p=0
+            f+=1
+        print(lp)
+        for h in range(len(matrix)):
+            for g in range(len(matrix)):
+                matrix[h][g]=lp[h][g]
