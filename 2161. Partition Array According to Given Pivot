@@ -1,0 +1,14 @@
+class Solution:
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        f=[]
+        l=[]
+        k=[]
+        for i in range(len(nums)):
+            if nums[i] < pivot :
+                f.append(nums[i])
+            elif nums[i]>pivot:
+                l.append(nums[i])
+            else:
+                k.append(nums[i])    
+        m=f+k+l
+        return m
