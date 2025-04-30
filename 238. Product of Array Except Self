@@ -1,0 +1,17 @@
+import math
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        arr=math.prod(nums)
+        s=[]
+        if  0 not in nums:
+            for i in nums:
+                a=arr//i
+                s.append(a)
+            return s
+        else:
+            f=[]
+            for j in range (len(nums)):
+                v=nums[:j]+nums[j+1:]
+                x= math.prod(v)
+                f.append(x)
+            return f
