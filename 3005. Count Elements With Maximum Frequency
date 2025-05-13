@@ -1,0 +1,14 @@
+class Solution:
+    def maxFrequencyElements(self, nums: List[int]) -> int:
+        j={}
+        m=[]
+        n=0
+        for i in nums:
+            if nums.count(i) not in j:
+                j[nums.count(i)]=[i]
+                m.append(nums.count(i))
+            else:
+                j[nums.count(i)].append(i)
+        mn=max(m)
+        if mn in j:
+            return len(j[mn])
