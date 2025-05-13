@@ -1,0 +1,9 @@
+class Solution:
+    def scoreOfString(self, s: str) -> int:
+        k=[]
+        m=[]
+        for i in s:
+            k.append(ord(i))
+        for j in range(len(k)-1):
+            m.append(abs(k[j]-k[j+1]))
+        return sum(m)
