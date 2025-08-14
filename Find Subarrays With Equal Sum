@@ -1,0 +1,11 @@
+class Solution:
+    def findSubarrays(self, nums: List[int]) -> bool:
+        l=[]
+        for i in range(len(nums)-1):
+            k=nums[i:i+2]
+            l.append(sum(k))
+        for u in l:
+            if l.count(u)>1:
+                return True
+        return False
+            
