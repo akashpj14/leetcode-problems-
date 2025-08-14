@@ -1,0 +1,10 @@
+class Solution:
+    def maxDifference(self, s: str) -> int:
+        h=Counter(s)
+        od=[j for j in h.values() if j%2!=0]
+        ev=[j for j in h.values() if j%2==0]
+        potti=[]
+        for j in od:
+            for k in ev:
+                potti.append(j-k)
+        return max(potti)
