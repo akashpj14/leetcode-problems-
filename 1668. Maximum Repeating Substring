@@ -1,0 +1,6 @@
+class Solution:
+    def maxRepeating(self, sequence: str, word: str) -> int:
+        g=0
+        while (word)*(g+1) in sequence:
+            g+=1
+        return g
