@@ -1,0 +1,13 @@
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        n = [[1]]
+        if numRows == 1:
+            return n
+        for i in range(1, numRows):  
+            v = n[-1]            
+            b = [1]                  
+            for j in range(1, len(v)):
+                b.append(v[j-1] + v[j])  
+            b.append(1)              
+            n.append(b)
+        return n
